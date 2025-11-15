@@ -12,13 +12,14 @@
 
     <header class="navbar">
         <div class="container navbar-content">
-            <h1 class="logo">Natours-Travel<span>.ph</span></h1>
-            <nav class="nav-links" id="nav-links">
-                <a href="#hero">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#deals">Deals</a>
-                <a href="#contact">Contact</a>
+            <a href="index.html" class="logo-link">
+                 <img src="images/logo.png" alt="Natours Travel Logo" class="logo-img"> 
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="services.html">Services</a>
+                <a href="deals.html">Deals</a>
+                <a href="index.html#contact">Contact</a>
             </nav>
             <button class="menu-toggle" aria-label="Toggle Navigation Menu">
                 <i data-feather="menu"></i>
@@ -27,11 +28,17 @@
     </header>
 
     <main>
-        <section id="hero" class="hero-section wave-divider-bottom">
+        <section id="home" class="hero-section wave-divider-bottom">
             <div class="hero-content container">
                 <h2 class="hero-title">Explore the World With Natours Travel</h2>
                 <p class="hero-subtitle">Your next unforgettable adventure starts here.</p>
-                <a href="#deals" class="btn btn-primary">Book Your Trip</a>
+                <a href="services.html" class="btn btn-primary">Book Your Trip</a>
+                
+                <div class="welcome-box">
+                    <h3>Welcome to Natours Travel!</h3>
+                    <p>We craft unforgettable journeys tailored for every Filipino traveler. Discover the world's natural beauty and hidden gems with us.</p>
+                </div>
+
                 <div class="hero-taglines">
                     <p>“The world is waiting. Let's fly it together.”</p>
                     <p>“Life is short. Travel more.”</p>
@@ -42,104 +49,103 @@
             </svg>
         </section>
 
-        <section id="about" class="about-section wave-divider-top wave-divider-bottom bg-light">
-            <div class="container">
-                <h3 class="section-title">Why Travel With Natours?</h3>
-                <p class="section-description">Natours is a proudly Filipino-friendly travel service dedicated to making your dream vacations accessible. We offer personalized support and transparent pricing, ensuring a hassle-free journey from booking to landing.</p>
-
-                <div class="about-highlights">
-                    <div class="highlight-card">
-                        <i data-feather="clock"></i>
-                        <h4>Fast Booking</h4>
-                        <p>Quick and easy reservations for flights and hotels.</p>
+        <section id="about" class="about-section wave-divider-bottom bg-light">
+            <div class="container text-center">
+                <h3 class="section-title">About Natours Travel & Tour Services</h3>
+                <p class="section-description">Natours Travel is your accredited partner in adventure. We focus on providing personalized, affordable, and quality travel experiences, drawing inspiration from the world's most breathtaking natural landscapes. We ensure every trip is seamless, from booking to coming home.</p>
+                <div class="about-details">
                     </div>
-                    <div class="highlight-card">
-                        <i data-feather="globe"></i>
-                        <h4>Worldwide Options</h4>
-                        <p>Access to destinations across Asia, Europe, and beyond.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i data-feather="dollar-sign"></i>
-                        <h4>Affordable Packages</h4>
-                        <p>Best-value deals without compromising quality.</p>
-                    </div>
-                    <div class="highlight-card">
-                        <i data-feather="smile"></i>
-                        <h4>Friendly Support</h4>
-                        <p>Dedicated team ready to assist you 24/7.</p>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <a href="#contact" class="btn btn-secondary">Learn More</a>
-                </div>
             </div>
-            <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+             <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
                 <path d="M0,50 C240,0 480,100 720,50 S1200,0 1440,50 V100 H0 Z" fill="#FFFFFF"></path>
             </svg>
         </section>
 
-        <section id="services" class="services-section wave-divider-bottom">
+        <section id="services-preview" class="services-preview-section">
             <div class="container">
-                <h3 class="section-title">Our Travel Services</h3>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-illustration"><i data-feather="send"></i></div>
+                <h3 class="section-title">Explore Our Travel Options</h3>
+                
+                <div class="service-preview-card layout-left">
+                    <div class="service-illustration">
+                        <i data-feather="send"></i>
+                    </div>
+                    <div class="service-content">
                         <h4>Flight Booking</h4>
-                        <p>Affordable flights with personalized booking assistance to get you the best routes.</p>
-                        <a href="#" class="btn btn-primary">Book a Flight</a>
+                        <p>We search for the best routes and rates globally, ensuring you get the most affordable flights. Fly hassle-free!</p>
+                        <a href="services.html#flights" class="btn btn-primary">See More</a>
                     </div>
+                </div>
 
-                    <div class="service-card">
-                        <div class="service-illustration"><i data-feather="home"></i></div>
-                        <h4>Hotel Booking</h4>
-                        <p>We find the best-value hotels, resorts, and unique stays for every budget.</p>
-                        <a href="#" class="btn btn-primary">Find Hotels</a>
+                <div class="service-preview-card layout-right">
+                    <div class="service-content">
+                        <h4>Hotel & Stay Booking</h4>
+                        <p>Access a wide selection of best-value hotels, resorts, and vacation rentals tailored to your comfort and budget.</p>
+                        <a href="services.html#hotels" class="btn btn-primary">See More</a>
                     </div>
+                    <div class="service-illustration illustration-hotel">
+                        </div>
+                </div>
 
-                    <div class="service-card">
-                        <div class="service-illustration"><i data-feather="camera"></i></div>
+                <div class="service-preview-card layout-left">
+                    <div class="service-illustration illustration-tours">
+                        </div>
+                    <div class="service-content">
                         <h4>Tour Packages</h4>
-                        <p>Curated packages to amazing destinations: Japan, Korea, Boracay, Thailand, and more!</p>
-                        <a href="#" class="btn btn-primary">View Packages</a>
+                        <p>Curated adventures to stunning destinations. As a Via.com accredited partner, we offer reliable and exciting itineraries.</p>
+                        <a href="services.html#tours" class="btn btn-primary">See More</a>
                     </div>
+                </div>
+
+                <div class="service-preview-card layout-right">
+                    <div class="service-content">
+                        <h4>Cruising</h4>
+                        <p>Experience luxury and relaxation on the sea. Explore multiple destinations in one incredible journey. All-inclusive packages available.</p>
+                        <a href="services.html#cruising" class="btn btn-primary">See More</a>
+                    </div>
+                    <div class="service-illustration illustration-cruising">
+                        </div>
                 </div>
             </div>
             <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
-                <path d="M0,50 C240,100 480,0 720,50 S1200,100 1440,50 V100 H0 Z" fill="#FFB9B9"></path>
+                <path d="M0,50 C240,100 480,0 720,50 S1200,100 1440,50 V100 H0 Z" fill="#F4F9FF"></path>
             </svg>
         </section>
 
-        <section id="deals" class="deals-section wave-divider-top wave-divider-bottom bg-warm">
+        <section id="deals-preview" class="deals-preview-section bg-light">
             <div class="container">
-                <h3 class="section-title">Monthly Deals & Promos</h3>
+                <h3 class="section-title">Our Best Deals & Promos</h3>
                 <div class="deals-grid">
-                    <div class="deal-card">
-                        <div class="deal-image deal-japan"></div>
-                        <h4>Japan Autumn Deal</h4>
-                        <p class="price-tag">Starts at P25,000</p>
-                        <p>Experience the stunning Koyo (autumn leaves) with our 5D/4N package.</p>
-                    </div>
-                    <div class="deal-card">
-                        <div class="deal-image deal-korea"></div>
-                        <h4>Korea Winter Deal</h4>
-                        <p class="price-tag">Starts at P18,000</p>
-                        <p>Seoul city tours, skiing, and cozy winter cafés.</p>
-                    </div>
-                    <div class="deal-card">
-                        <div class="deal-image deal-boracay"></div>
-                        <h4>Boracay + Hotel Package</h4>
-                        <p class="price-tag">Starts at P8,500</p>
-                        <p>All-inclusive local escape to the world-famous White Beach.</p>
-                    </div>
-                    <div class="deal-card">
-                        <div class="deal-image deal-singapore"></div>
-                        <h4>Singapore + Malaysia</h4>
-                        <p class="price-tag">Starts at P28,000</p>
-                        <p>Twin-city adventure: Gardens by the Bay and Kuala Lumpur.</p>
-                    </div>
+                    <a href="deals.html" class="deal-card deal-tour">
+                        <div class="hover-overlay">
+                            <h4>Exclusive Tour Deal!</h4>
+                            <p>50% off on Japan Autumn packages.</p>
+                            <span class="btn-small">See More</span>
+                        </div>
+                    </a>
+                    <a href="deals.html" class="deal-card deal-flight">
+                         <div class="hover-overlay">
+                            <h4>Low-Cost Flights</h4>
+                            <p>P500 off on international flight bookings.</p>
+                            <span class="btn-small">See More</span>
+                        </div>
+                    </a>
+                    <a href="deals.html" class="deal-card deal-hotel">
+                        <div class="hover-overlay">
+                            <h4>Beach Stay Promo</h4>
+                            <p>3 nights for the price of 2 in Boracay.</p>
+                            <span class="btn-small">See More</span>
+                        </div>
+                    </a>
+                    <a href="deals.html" class="deal-card deal-cruise">
+                        <div class="hover-overlay">
+                            <h4>Caribbean Cruise Savings</h4>
+                            <p>15% off on all luxury cruise itineraries.</p>
+                            <span class="btn-small">See More</span>
+                        </div>
+                    </a>
                 </div>
                 <div class="text-center">
-                    <a href="#" class="btn btn-primary btn-large">Grab This Deal</a>
+                    <a href="deals.html" class="btn btn-primary btn-large">View All Deals</a>
                 </div>
             </div>
             <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
@@ -147,30 +153,71 @@
             </svg>
         </section>
 
-        <section id="contact" class="contact-section wave-divider-top">
-            <div class="container">
-                <h3 class="section-title">Get in Touch With Us</h3>
-                <div class="contact-details">
-                    <p><i data-feather="phone"></i> **Phone:** +63 917 123 4567</p>
-                    <p><i data-feather="mail"></i> **Email:** book@natours-travel.ph</p>
-                    <p><i data-feather="facebook"></i> **FB Page:** NatoursTravelPH</p>
-                </div>
-                <div class="text-center">
-                    <a href="https://m.me/NatoursTravelPH" target="_blank" class="btn btn-primary btn-large">Message Us</a>
-                </div>
+        <section id="contact" class="contact-section">
+            <div class="container text-center">
+                 <h3 class="section-title">Send Us a Message</h3>
+                 <form id="contact-form" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary btn-large">Submit</button>
+                    <p id="form-message" style="margin-top: 1rem;"></p>
+                </form>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer-broccobae">
         <div class="container">
-            <p>&copy; 2025 Natours-Travel.ph. All rights reserved.</p>
+            <div class="footer-top">
+                <div class="footer-col footer-info">
+                    <img src="images/logo.png" alt="Natours Logo" class="logo-img logo-footer"> 
+                    <p>Your ultimate destination for unforgettable travel experiences, tours, flight, hotel, and cruise bookings.</p>
+                </div>
+                
+                <div class="footer-col footer-contact">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i data-feather="phone"></i> 09123456789</li>
+                        <li><i data-feather="mail"></i> natours-travel.ph@gmail.com</li>
+                        <li><i data-feather="map-pin"></i> Manila, Philippines</li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-legal">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-middle">
+                <hr>
+                <div class="follow-us">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><div class="social-icon"><i data-feather="twitter"></i></div></a>
+                        <a href="#"><div class="social-icon"><i data-feather="instagram"></i></div></a>
+                        <a href="#"><div class="social-icon"><i data-feather="facebook"></i></div></a>
+                        <a href="#"><div class="social-icon"><i data-feather="message-circle"></i></div></a>
+                        <a href="#"><div class="social-icon"><i data-feather="youtube"></i></div></a>
+                        <a href="#"><div class="social-icon"><i data-feather="linkedin"></i></div></a>
+                        <a href="#"><div class="social-icon"><i data-feather="headphones"></i></div></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                © 2025 Natours-Travel-And-Tour-Services @ Natours-Trvael.ph All rights reserved.
+            </div>
         </div>
     </footer>
     
     <script>
-        // Initialize Feather Icons
-        feather.replace();
+        feather.replace(); // Initialize Feather Icons
     </script>
     <script src="script.js"></script>
 </body>

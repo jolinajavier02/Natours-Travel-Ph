@@ -1,20 +1,15 @@
 /* Color Palette Variables */
 :root {
-    --color-primary-accent: #70A1FF; /* Soft Sky Blue */
-    --color-secondary-accent: #A9D8FF; /* Lighter Sky Blue (for gradients) */
-    --color-tertiary-accent: #FFB9B9; /* Soft Coral Pink (for deals) */
+    --color-primary-green: #09713D; /* Deep Forest Green (Main/Footer) */
+    --color-primary-accent: #70A1FF; /* Soft Sky Blue (CTA/Links) */
+    --color-secondary-accent: #A9D8FF; 
     --color-background-base: #F4F9FF; /* Very Light Pale Blue */
-    --color-text-dark: #333333; /* Soft Black/Dark Gray */
+    --color-text-dark: #333333; 
     --color-white: #ffffff;
 }
 
-/* Base Styles & Typography */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
+/* Base Styles (Inherited from previous) */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body {
     font-family: 'Inter', sans-serif;
     color: var(--color-text-dark);
@@ -22,289 +17,169 @@ body {
     line-height: 1.6;
     scroll-behavior: smooth;
 }
-
-h1, h2, h3, h4 {
-    font-family: 'Outfit', sans-serif;
-    color: var(--color-text-dark);
-    line-height: 1.2;
-}
+h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; line-height: 1.2; }
 
 /* Utility Classes */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-
-.bg-light {
-    background-color: var(--color-background-base);
-}
-
-.bg-warm {
-    background-color: var(--color-tertiary-accent);
-}
-
-.text-center {
-    text-align: center;
-}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+.bg-light { background-color: var(--color-background-base); }
+.text-center { text-align: center; }
 
 /* Buttons */
 .btn {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    margin-top: 1rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    border: 2px solid transparent;
+    display: inline-block; padding: 0.75rem 2rem; margin-top: 1rem;
+    border-radius: 50px; text-decoration: none; font-weight: 600;
+    transition: all 0.3s ease; cursor: pointer; border: 2px solid transparent;
 }
-
 .btn-primary {
     background-color: var(--color-primary-accent);
     color: var(--color-white);
     box-shadow: 0 5px 15px rgba(112, 161, 255, 0.4);
 }
-
 .btn-primary:hover {
     background-color: #5d8eef;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(112, 161, 255, 0.6);
 }
+.btn-small { padding: 0.5rem 1rem; font-size: 0.9rem; }
+.btn-large { padding: 1rem 3rem; font-size: 1.1rem; }
 
-.btn-secondary {
-    background: none;
-    color: var(--color-primary-accent);
-    border: 2px solid var(--color-primary-accent);
-}
-
-.btn-secondary:hover {
-    background-color: var(--color-primary-accent);
-    color: var(--color-white);
-}
-
-.btn-large {
-    padding: 1rem 3rem;
-    font-size: 1.1rem;
-}
 
 /* Global Section Styles */
-section {
-    position: relative;
-    padding: 8rem 0;
-    overflow: hidden; /* Important for containing waves */
-}
-
-.section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.section-description {
-    max-width: 700px;
-    margin: 0 auto 3rem;
-    text-align: center;
-    font-size: 1.1rem;
-}
+section { position: relative; padding: 8rem 0; overflow: hidden; }
+.section-title { font-size: 2.5rem; text-align: center; margin-bottom: 1rem; }
 
 /* Wave Divider Styling */
-.wave {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100px; /* Controls the height of the wave */
-    z-index: 10; /* Ensures the wave is above section content if needed */
-}
+.wave { position: absolute; left: 0; width: 100%; height: 100px; z-index: 10; }
+.wave-divider-bottom { padding-bottom: 0; }
+.wave-divider-bottom .wave { bottom: 0; }
 
-/* Bottom waves for dividing sections */
-.wave-divider-bottom {
-    padding-bottom: 0; /* Remove padding from section bottom */
-}
-.wave-divider-bottom .wave {
-    bottom: 0;
-}
-
-/* Top waves for section backgrounds */
-.wave-divider-top .wave {
-    top: 0;
-    transform: rotate(180deg); /* Flip the SVG for a top wave */
-}
-
-/* --- 1. NAVIGATION BAR --- */
+/* --- NAVIGATION BAR --- */
 .navbar {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    position: fixed; width: 100%; top: 0; z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
-
-.navbar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-}
-
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--color-primary-accent);
-}
-.logo span {
-    color: var(--color-text-dark);
-    font-weight: 400;
-}
-
-.nav-links a {
-    margin-left: 1.5rem;
-    text-decoration: none;
-    color: var(--color-text-dark);
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--color-primary-accent);
-}
-
-.menu-toggle {
-    display: none; /* Hide on desktop */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-}
+.navbar-content { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+.logo-img { height: 40px; } /* Adjust size of logo.png */
+.nav-links a { margin-left: 1.5rem; text-decoration: none; color: var(--color-text-dark); font-weight: 500; }
+.nav-links a:hover { color: var(--color-primary-accent); }
+.menu-toggle { display: none; } /* Hidden on desktop */
 
 /* --- 1. HERO SECTION --- */
 .hero-section {
-    background-image: linear-gradient(rgba(169, 216, 255, 0.2), rgba(169, 216, 255, 0.2)), url('https://picsum.photos/1600/900?travel');
-    background-size: cover;
-    background-position: center;
-    padding-top: 12rem;
-    padding-bottom: 12rem;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    color: var(--color-white); /* Text color contrast */
+    /* Nature Scenery background */
+    background-image: linear-gradient(rgba(9, 113, 61, 0.3), rgba(9, 113, 61, 0.3)), url('https://picsum.photos/1600/900?nature,scenery');
+    background-size: cover; background-position: center; padding-top: 12rem;
+    min-height: 90vh; display: flex; align-items: center; color: var(--color-white);
 }
 
 .hero-content {
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-    z-index: 20;
+    text-align: center; max-width: 900px; margin: 0 auto; z-index: 20;
 }
 
 .hero-title {
-    font-size: 4rem;
-    font-weight: 700;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    color: var(--color-white);
+    font-size: 4rem; font-weight: 700; color: var(--color-white);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+.hero-subtitle {
+    font-size: 1.5rem; margin-top: 1rem; color: var(--color-white);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-.hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-top: 1rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    color: var(--color-white);
+.welcome-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--color-text-dark);
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 3rem auto 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-box h3 {
+    color: var(--color-primary-green);
+    margin-bottom: 0.5rem;
 }
 
 .hero-taglines {
-    margin-top: 3rem;
-    font-style: italic;
-    opacity: 0.8;
+    margin-top: 2rem; font-style: italic; opacity: 0.9;
+    color: var(--color-white);
 }
 
-.hero-taglines p:first-child {
-    margin-bottom: 0.5rem;
-}
-
-/* --- 2. ABOUT SECTION --- */
-.about-section {
+/* --- 3. SERVICES SECTION PREVIEW (Alternate Layout) --- */
+.services-preview-section {
     background-color: var(--color-white);
-    padding-top: 4rem; /* Adjust padding due to wave top */
-    padding-bottom: 8rem;
+    padding-top: 4rem;
 }
 
-.about-highlights {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    margin: 4rem 0;
+.service-preview-card {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin: 6rem 0;
+    padding: 2rem 0;
 }
 
-.highlight-card {
-    text-align: center;
-    padding: 1.5rem;
-    border-radius: 12px;
-    background-color: var(--color-background-base);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.service-illustration {
+    min-width: 350px;
+    height: 250px;
+    background-color: var(--color-background-base); /* Default placeholder */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.highlight-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(112, 161, 255, 0.2);
-}
-
-.highlight-card i {
-    color: var(--color-primary-accent);
-    width: 3rem;
-    height: 3rem;
-    margin-bottom: 0.5rem;
-}
-
-.highlight-card h4 {
-    margin: 0.5rem 0;
-    font-weight: 600;
-}
-
-/* --- 3. SERVICES SECTION --- */
-.services-section {
-    background-color: var(--color-background-base);
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.service-card {
-    background-color: var(--color-white);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.service-card:hover {
-    transform: scale(1.03);
-}
-
+/* Iconic Illustration */
 .service-illustration i {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     stroke-width: 1.5px;
     color: var(--color-primary-accent);
-    margin-bottom: 1rem;
 }
 
-.service-card h4 {
-    font-size: 1.4rem;
+/* Realistic Illustrations (Placeholders) */
+.illustration-hotel {
+    background-image: url('https://picsum.photos/400/300?hotel,bed');
+    background-size: cover;
+}
+.illustration-tours {
+    background-image: url('https://picsum.photos/400/300?via,tour,collage');
+    background-size: cover;
+}
+.illustration-cruising {
+    /* Realistic picture with soft overlay */
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://picsum.photos/400/300?cruise,ship');
+    background-size: cover;
+}
+
+
+.service-content h4 {
+    font-size: 2rem;
     margin-bottom: 0.5rem;
+    color: var(--color-primary-green);
 }
 
-/* --- 4. DEALS SECTION --- */
-.deals-section {
-    background-color: var(--color-tertiary-accent);
-    padding-top: 4rem; /* Adjust padding due to wave top */
+/* Layout Alternate Styling */
+.layout-left .service-illustration {
+    order: 1; /* Illustration on the left */
+}
+.layout-left .service-content {
+    order: 2;
+    text-align: left;
+}
+.layout-right .service-illustration {
+    order: 2; /* Illustration on the right */
+}
+.layout-right .service-content {
+    order: 1;
+    text-align: right;
+}
+
+/* --- 4. DEALS SECTION PREVIEW (Hover Layer) --- */
+.deals-preview-section {
+    background-color: var(--color-background-base);
 }
 
 .deals-grid {
@@ -315,159 +190,228 @@ section {
 }
 
 .deal-card {
-    background-color: var(--color-white);
+    height: 250px;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
-}
-
-.deal-card:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.deal-image {
-    height: 150px;
+    position: relative;
     background-size: cover;
     background-position: center;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.deal-japan { background-image: url('https://picsum.photos/400/300?japan'); }
-.deal-korea { background-image: url('https://picsum.photos/400/300?korea'); }
-.deal-boracay { background-image: url('https://picsum.photos/400/300?boracay'); }
-.deal-singapore { background-image: url('https://picsum.photos/400/300?singapore'); }
+/* Deal Images (Placeholders) */
+.deal-tour { background-image: url('https://picsum.photos/400/250?promo,tour'); }
+.deal-flight { background-image: url('https://picsum.photos/400/250?promo,flight'); }
+.deal-hotel { background-image: url('https://picsum.photos/400/250?promo,hotel'); }
+.deal-cruise { background-image: url('https://picsum.photos/400/250?promo,cruise'); }
 
-.deal-card h4 {
-    margin: 1rem 1rem 0.5rem;
-    font-size: 1.25rem;
+
+.hover-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(9, 113, 61, 0.9); /* Dark Green Overlay */
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 1rem;
 }
 
-.deal-card p {
-    padding: 0 1rem 1rem;
-    font-size: 0.9rem;
+.deal-card:hover .hover-overlay {
+    opacity: 1;
 }
 
-.price-tag {
-    font-weight: 700;
-    color: var(--color-primary-accent);
-    font-size: 1rem !important;
-    padding-bottom: 0 !important;
+.hover-overlay h4 {
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+.hover-overlay p {
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 /* --- 5. CONTACT SECTION --- */
-.contact-section {
-    background-color: var(--color-white);
-    padding-top: 4rem; /* Adjust padding due to wave top */
-}
-
-.contact-details {
+.contact-form {
     max-width: 600px;
-    margin: 3rem auto;
-    text-align: center;
-    font-size: 1.1rem;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.contact-details p {
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--color-primary-accent);
+    outline: none;
+}
+
+/* --- FOOTER (Broccobae Style) --- */
+.footer-broccobae {
+    background-color: var(--color-primary-green);
+    color: rgba(255, 255, 255, 0.85);
+    padding: 3rem 0 1rem;
+    font-size: 0.95rem;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-info {
+    flex: 2; /* Give more space to the info column */
+    max-width: 300px;
+}
+
+.logo-footer {
+    height: 45px; /* Slightly larger logo in footer */
+    filter: brightness(0) invert(1); /* Invert logo color for dark background */
     margin-bottom: 1rem;
+}
+
+.footer-col h4 {
+    color: var(--color-white);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col li {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.footer-col i {
+    color: var(--color-white);
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    opacity: 0.8;
+}
+
+.footer-col a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--color-primary-accent);
+}
+
+.footer-middle hr {
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 1.5rem 0;
+}
+
+.follow-us {
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    transition: background-color 0.3s;
 }
 
-.contact-details i {
-    color: var(--color-primary-accent);
-    width: 1.5rem;
-    height: 1.5rem;
+.social-icon:hover {
+    background-color: var(--color-primary-accent);
 }
 
-/* FOOTER */
-footer {
-    background-color: var(--color-text-dark);
+.social-icon i {
     color: var(--color-white);
-    text-align: center;
-    padding: 1.5rem 0;
-    font-size: 0.9rem;
+    margin: 0;
+    opacity: 1;
 }
 
-/* --- RESPONSIVE MOBILE STYLES (Max-width 768px) --- */
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
+}
+
+/* Responsive styles (Mobile) */
 @media (max-width: 768px) {
-    /* Base */
-    section {
-        padding: 5rem 0;
-    }
-    .container {
-        padding: 0 1.5rem;
-    }
-    .section-title {
-        font-size: 2rem;
-    }
+    /* Hero */
+    .hero-title { font-size: 2.5rem; }
     
-    /* Navigation */
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 70%;
-        height: 100%;
-        background-color: var(--color-white);
+    /* Services */
+    .service-preview-card {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transform: translateX(100%);
-        transition: transform 0.4s ease-in-out;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-        z-index: 999;
+        gap: 2rem;
+        margin: 4rem 0;
     }
-    .nav-links.active {
-        transform: translateX(0);
+    .layout-left .service-illustration,
+    .layout-right .service-illustration {
+        order: 1;
+        width: 100%;
     }
-    .nav-links a {
-        margin: 1rem 0;
-        font-size: 1.2rem;
-        padding: 0.5rem 0;
-        width: 80%;
+    .layout-left .service-content,
+    .layout-right .service-content {
+        order: 2;
         text-align: center;
     }
-    .menu-toggle {
-        display: block;
-        z-index: 1000;
-        color: var(--color-primary-accent);
-    }
-    
-    /* Hero */
-    .hero-section {
-        min-height: 60vh;
-        padding-top: 10rem;
-        padding-bottom: 10rem;
-    }
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-    .hero-taglines {
-        display: none; /* Hide for mobile space */
-    }
-
-    /* About */
-    .about-highlights {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    /* Services */
-    .services-grid {
-        grid-template-columns: 1fr;
+    .service-illustration {
+        min-width: unset;
     }
 
     /* Deals */
     .deals-grid {
         grid-template-columns: 1fr;
     }
-    .deal-card {
-        max-width: 350px;
-        margin: 0 auto;
+
+    /* Footer */
+    .footer-top {
+        flex-direction: column;
+    }
+    .footer-col {
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+    .footer-info {
+        flex: unset;
     }
 }
